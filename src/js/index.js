@@ -1,3 +1,5 @@
+import { products } from "./data.js";
+
 // const ulEl = document.querySelector("ul");
 // const form = document.querySelector("form");
 // const input = document.querySelector("input");
@@ -50,3 +52,48 @@ themeTogler.addEventListener("click", () => {
   localStorage.setItem("theme", html.dataset.theme);
   themeTogler.checked = html.dataset.theme == "dark" ? true : false;
 });
+
+const template = document.querySelector("template");
+const productsList = document.getElementById("products-list");
+const counter = document.querySelector(".counter");
+
+products.forEach((product) => {
+  let clone = template.content.cloneNode(true);
+
+  const cardImage = clone.querySelector(".card__image"),
+    cardTitle = clone.querySelector(".title"),
+    rating = clone.querySelector(".rating"),
+    description = clone.querySelector(".description"),
+    price = clone.querySelector(".price"),
+    discount = clone.querySelector(".discount"),
+    brand = clone.querySelector(".brand");
+
+  cardImage.src = product.thumbnail;
+  cardTitle.textContent = product.title;
+  rating.textContent = "⭐" + product.rating;
+  description.textContent = product.description;
+  price.textContent = "$" + product.price;
+  brand.textContent = "brand :" + product.brand;
+
+  counter.textContent = products.length;
+
+  discount.textContent =
+    "$" +
+    ((product.discountPercentage.toFixed() / 100) * product.price).toFixed();
+
+  if (!product.brand) {
+    brand.remove();
+  }
+
+  if (product.rating < 3) {
+    rating.style.color = "red";
+  } else if (product.rating > 3 && product.rating < 4) {
+    rating.style.color = "yellow";
+  } else if (product.rating > 4) {
+    rating.style.color = "green";
+  }
+
+  productsList.append(clone);
+});
+
+console.log(products);

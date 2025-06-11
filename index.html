@@ -46,6 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8dars</title>
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./src/input.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -122,10 +123,16 @@
       </div>
     </div>
     <div class="cards__container container">
+      <div class="flex items-center gap-[300px] mt-[50px]">
+        <h1 class="text-[26px]">Products :</h1>
+
+        <h3 class="counter text-[22px] font-semibold"></h3>
+      </div>
       <ul
+        id="products-list"
         class="cards__list grid lg:grid-cols-3 gap-[25px] z-[1] my-[80px] sm:grid-cols-1"
       >
-        <li>
+        <!-- <li>
           <div class="card card-side bg-base-100 shadow-sm">
             <figure>
               <img
@@ -386,7 +393,40 @@
               </div>
             </div>
           </div>
-        </li>
+        </li> -->
+
+        <template>
+          <li class="card bg-base-100 w-full shadow-sm">
+            <div class="card bg-base-100 w-96 shadow-sm">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Shoes"
+                  class="card__image"
+                />
+              </figure>
+              <div class="card-body">
+                <div class="flex gap-[60px]">
+                  <h2 class="title underline text-[18px] font-extrabold">
+                    Card Title
+                  </h2>
+                  <p class="rating">⭐</p>
+                </div>
+                <p class="description line-clamp-3 opacity-60">
+                  A card component has a figure, a body part, and inside body
+                  there are title and actions parts
+                </p>
+                <p class="price line-through text-red-600"></p>
+                <p class="discount text-[26px]"></p>
+                <div class="card-actions justify-end flex">
+                  <i class="brand text-yellow-400"></i>
+                  <button class="btn btn-primary">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div></li
+        ></template>
       </ul>
     </div>
 
@@ -459,6 +499,6 @@
         </footer>
       </div>
     </footer>
-    <script src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
   </body>
 </html>
