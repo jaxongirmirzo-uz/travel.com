@@ -37,13 +37,12 @@ span {
   margin-left: auto;
 }
 
-li {
-  border: 1px solid rgb(37, 18, 104);
-  border-radius: 12px;
-  &:hover {
-    box-shadow: 0 0 50px 20px rgb(37, 18, 104);
-    transform: scale(1.08);
-    transition: 0.3s;
-    z-index: 1;
-  }
+.card__container:hover {
+  background-color: #d5c25a;
+  transition: 0.3s;
+  transform: scale3d(1.03, 1, 2.5);
+}
+
+.card__container {
+  border: 1px solid #d5c25a;
 }

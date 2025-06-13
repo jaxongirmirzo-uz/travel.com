@@ -1,4 +1,6 @@
 import { products } from "./data.js";
+import formatNumber from "./formatNumber.js";
+import "./searchInput.js";
 
 // const ulEl = document.querySelector("ul");
 // const form = document.querySelector("form");
@@ -39,6 +41,7 @@ import { products } from "./data.js";
 // 8dars
 
 const html = document.documentElement;
+
 const themeTogler = document.getElementById("theme-toggler");
 const theme = localStorage.getItem("theme");
 const header = document.querySelector("header");
@@ -60,26 +63,37 @@ const counter = document.querySelector(".counter");
 products.forEach((product) => {
   let clone = template.content.cloneNode(true);
 
+  const {
+    title,
+    description: _description,
+    thumbnail,
+    price: _price,
+    discountPercentage,
+    rating: _rating,
+    brand: _brand,
+  } = product;
+
   const cardImage = clone.querySelector(".card__image"),
     cardTitle = clone.querySelector(".title"),
     rating = clone.querySelector(".rating"),
     description = clone.querySelector(".description"),
     price = clone.querySelector(".price"),
     discount = clone.querySelector(".discount"),
-    brand = clone.querySelector(".brand");
+    brand = clone.querySelector(".brand"),
+    cardContainer = clone.querySelector(".card__container");
 
-  cardImage.src = product.thumbnail;
-  cardTitle.textContent = product.title;
-  rating.textContent = "⭐" + product.rating;
-  description.textContent = product.description;
-  price.textContent = "$" + product.price;
-  brand.textContent = "brand :" + product.brand;
+  cardImage.src = thumbnail;
+  cardTitle.textContent = title;
+  rating.textContent = "⭐" + _rating;
+  description.textContent = _description;
+  brand.textContent = "brand :" + _brand;
+  const likedBtn = document.createElement("i");
+  likedBtn.classList.add("fa-solid", "fa-thumbs-up");
 
   counter.textContent = products.length;
-
-  discount.textContent =
-    "$" +
-    ((product.discountPercentage.toFixed() / 100) * product.price).toFixed();
+  price.textContent = formatNumber(_price);
+  const discountPrice = formatNumber(_price, discountPercentage);
+  discount.textContent = discountPrice;
 
   if (!product.brand) {
     brand.remove();
@@ -94,6 +108,22 @@ products.forEach((product) => {
   }
 
   productsList.append(clone);
-});
+  cardContainer.addEventListener("mouseover", () => {
+    cardImage.classList.add(
+      "mt-[10px]",
+      "bg-white",
+      "px-[20px]",
+      "py-[10px]",
+      "rounded-[12px]"
+    );
+  });
 
-console.log(products);
+  cardContainer.addEventListener("mouseout", () => {
+    cardImage.classList.remove(
+      "bg-white",
+      "px-[20px]",
+      "py-[10px]",
+      "rounded-[12px]"
+    );
+  });
+});

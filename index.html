@@ -56,7 +56,7 @@
     />
   </head>
   <body>
-    <header class="header bg-neutral text-white">
+    <header class="header bg-[#d5c25a] text-white">
       <div class="navbar container">
         <div class="navbar-start">
           <i class="fa-solid fa-earth-europe"></i>
@@ -100,33 +100,32 @@
         </div>
       </div>
     </header>
-    <div class="hero min-h-screen">
-      <video
-        src="./images/planet.mp4"
-        autoplay
-        muted
-        loop
-        class="w-full h-full object-cover z-[-1]"
-      ></video>
 
-      <div class="hero-overlay"></div>
-      <div class="hero-content text-neutral-content text-center">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-          <p class="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          <button class="btn btn-info">Get Started</button>
-        </div>
-      </div>
-    </div>
     <div class="cards__container container">
-      <div class="flex items-center gap-[300px] mt-[50px]">
+      <div class="flex items-center gap-[10px] mt-[50px]">
         <h1 class="text-[26px]">Products :</h1>
-
-        <h3 class="counter text-[22px] font-semibold"></h3>
+        <h3 class="counter text-[22px] font-semibold mt-[5px] mr-auto"></h3>
+        <label class="input">
+          <svg
+            class="h-[1em] opacity-50"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="2.5"
+              fill="none"
+              stroke="currentColor"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </g>
+          </svg>
+          <input type="search" id="search" class="grow" placeholder="Search" />
+          <kbd class="kbd kbd-sm">⌘</kbd>
+          <kbd class="kbd kbd-sm">K</kbd>
+        </label>
       </div>
       <ul
         id="products-list"
@@ -396,18 +395,20 @@
         </li> -->
 
         <template>
-          <li class="card bg-base-100 w-full shadow-sm">
-            <div class="card bg-base-100 w-96 shadow-sm">
+          <li class="card bg-base-100 w-full shadow-sm hover:text-black">
+            <div class="card bg-base-100 w-96 shadow-sm card__container">
               <figure>
                 <img
                   src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                   alt="Shoes"
-                  class="card__image"
+                  class="card__image px-[20px] py-[15px] mt-[10px]"
                 />
               </figure>
               <div class="card-body">
                 <div class="flex gap-[60px]">
-                  <h2 class="title underline text-[18px] font-extrabold">
+                  <h2
+                    class="title underline text-[18px] font-extrabold mr-auto"
+                  >
                     Card Title
                   </h2>
                   <p class="rating">⭐</p>
@@ -420,7 +421,7 @@
                 <p class="discount text-[26px]"></p>
                 <div class="card-actions justify-end flex">
                   <i class="brand text-yellow-400"></i>
-                  <button class="btn btn-primary">
+                  <button class="btn btn-primary korzinka">
                     <i class="fa-solid fa-cart-shopping"></i>
                   </button>
                 </div>
@@ -430,12 +431,12 @@
       </ul>
     </div>
 
-    <footer class="bg-neutral">
+    <footer class="bg-[#d5c25a]">
       <div
         class="footer__container footer sm:footer-horizontal text-neutral-content p-10 container"
       >
         <footer
-          class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4"
+          class="footer sm:footer-horizontal bg-[#d5c25a] text-black items-center p-4"
         >
           <aside class="grid-flow-col items-center">
             <svg
