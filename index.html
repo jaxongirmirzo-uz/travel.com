@@ -1,44 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./src/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body class="text-center text-white">
-    <div class="container">
-      <form class="mb-[50px] mt-[50px]">
-        <input
-          type="text"
-          placeholder="Type here"
-          class="input input-accent mr-[25px] bg-black"
-          name="title"
-        />
-        <button class="btn btn-accent hover:opacity-70 bg-transparent">
-          Add
-        </button>
-      </form>
-      <div class="container card bg-primary text-primary-content w-[450px]">
-        <div class="card-body">
-          <div class="card-actions justify-center">
-            <ul></ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="./src/js/index.js"></script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html data-theme="" lang="en">
   <head>
@@ -101,10 +60,24 @@
       </div>
     </header>
 
+    <div class="indicator ml-[70px] mt-[50px]">
+      <span class="indicator-item badge badge-success" id="products__counter"
+        >0</span
+      >
+      <button class="btn bg-[#d5c25a] rounded-[6px]">
+        <i class="fa-solid fa-bag-shopping"></i>
+      </button>
+    </div>
+
     <div class="cards__container container">
       <div class="flex items-center gap-[10px] mt-[50px]">
         <h1 class="text-[26px]">Products :</h1>
         <h3 class="counter text-[22px] font-semibold mt-[5px] mr-auto"></h3>
+        <select class="select" id="selecting">
+          <option disabled selected>Saralash</option>
+          <option data-price="high">Qimmati boyicha</option>
+          <option data-price="low">Arzoni boyicha</option>
+        </select>
         <label class="input">
           <svg
             class="h-[1em] opacity-50"
@@ -412,6 +385,7 @@
                     Card Title
                   </h2>
                   <p class="rating">⭐</p>
+                  <i class="fa-solid fa-thumbs-up likedBtn"></i>
                 </div>
                 <p class="description line-clamp-3 opacity-60">
                   A card component has a figure, a body part, and inside body
@@ -421,7 +395,7 @@
                 <p class="discount text-[26px]"></p>
                 <div class="card-actions justify-end flex">
                   <i class="brand text-yellow-400"></i>
-                  <button class="btn btn-primary korzinka">
+                  <button class="btn btn-primary korzinka buy__btn">
                     <i class="fa-solid fa-cart-shopping"></i>
                   </button>
                 </div>
