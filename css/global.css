@@ -1,0 +1,86 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Red Hat Text";
+  background-color: #fcf8f6;
+  width: 100%;
+}
+
+.title {
+  color: #260f08;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mini__title {
+  margin-top: 32px;
+  color: #87635a;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.price {
+  color: #c73b0f;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+li {
+  width: 250.57px;
+}
+
+img {
+  object-fit: cover;
+}
+
+.buy__btn {
+  margin-top: -22px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  padding: 12.5px 28px;
+  background-color: white;
+  font-weight: 600;
+  border: 1px solid #ad8a85;
+  border-radius: 999px;
+  position: absolute;
+  &:hover {
+    color: #c73b0f;
+    border: 1px solid #c73b0f;
+    transition: 0.3s;
+  }
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1276px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 88px;
+}
+
+.mini__container {
+  padding: 24px;
+}
+
+.hidden {
+  display: none;
+}
